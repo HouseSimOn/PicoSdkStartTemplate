@@ -4,6 +4,7 @@ Repo used to perform work with Pi Pico SDK
 ## Performed steps
 
 Platform: Ubuntu
+
 Based on: https://github.com/raspberrypi/pico-sdk
 
 1. Repository created and cloned `git clone https://github.com/HouseSimOn/PicoSdkTests.git`.
