@@ -1,5 +1,5 @@
 # PicoSdkTests
-Repo used to perform work with Pi Pico SDK
+Repo used to perform tests with Pi Pico SDK
 
 ## Performed steps
 
