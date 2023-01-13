@@ -22,6 +22,7 @@ jobs:
         uses: actions/checkout@v3
 
   Build:
+    needs: [PrepareEnvironment, Checkout]
     runs-on: ubuntu-latest
 
     # steps:
