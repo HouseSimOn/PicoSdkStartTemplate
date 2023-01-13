@@ -10,5 +10,8 @@ add_executable(PicoSdkTests main.c)
 
 target_link_libraries(PicoSdkTests pico_stdlib)
 
+pico_enable_stdio_usb(PicoSdkTests 1)
+pico_enable_stdio_uart(PicoSdkTests 0)
+
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(PicoSdkTests)
