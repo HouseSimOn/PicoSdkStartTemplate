@@ -13,41 +13,32 @@ jobs:
     steps:
     - name: Prepare environment
       run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential 
-
-  Checkout:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
+      
   Build:
-    needs: [PrepareEnvironment, Checkout]
     runs-on: ubuntu-latest
 
-    # steps:
-    # - name: Prepare environment
-    #   run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential 
-
-    # - name: Checkout
-    #   uses: actions/checkout@v3
-
-    # - name: Init submodules
-    #   run: |
-    #     git submodule update --init
-    #     cd pico-sdk
-    #     git submodule update --init
-
     steps:
-      - name: Configure CMake
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          cd ..
+    - name: Prepare environment
+      run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential 
 
-      - name: Build
-        run: |
-          cd build
-          make
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Init submodules
+      run: |
+        git submodule update --init
+        cd pico-sdk
+        git submodule update --init
+
+    - name: Configure CMake
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cd ..
+
+    - name: Build
+      run: |
+        cd build
+        make
 
