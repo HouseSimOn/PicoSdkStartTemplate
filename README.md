@@ -1,3 +1,5 @@
+[![Build](https://github.com/HouseSimOn/PicoSdkTests/actions/workflows/build_cmake.yml/badge.svg)](https://github.com/HouseSimOn/PicoSdkTests/actions/workflows/build_cmake.yml)
+
 # PicoSdkTests
 Repo used to perform tests with Pi Pico SDK
 
