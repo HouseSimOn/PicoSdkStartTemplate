@@ -6,6 +6,8 @@ project(PicoSdkTests)
 
 pico_sdk_init()
 
+add_link_options("-Wl,--print-memory-usage")
+
 add_executable(PicoSdkTests main.c)
 
 target_link_libraries(PicoSdkTests pico_stdlib)
