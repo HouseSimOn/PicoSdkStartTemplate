@@ -16,6 +16,12 @@ Based on: https://github.com/raspberrypi/pico-sdk
 2. Added submodule using `git submodule add https://github.com/raspberrypi/pico-sdk.git pico-sdk` command.
 3. Commit: `git commit -m "Added pico-sdk submodule"`.
 4. Call `git submodule update --init` in the main directory and then go to the pico-sdk and call this command again.
+5. Create settings.json for intellisense work with following content
+    ```json
+    { 
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools" 
+    } 
+    ```
 
 ### printf - via USB
 1. To CMakeLists.txt add following lines:
