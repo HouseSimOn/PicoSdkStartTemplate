@@ -3,6 +3,9 @@
 # PicoSdkTests
 Repo used to perform tests with Pi Pico SDK
 
+# Documentation
+https://raspberrypi.github.io/pico-sdk-doxygen/modules.html
+
 ## Performed steps
 
 Platform: Ubuntu
