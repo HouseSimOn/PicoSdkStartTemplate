@@ -7,7 +7,7 @@ bool timerCallback (repeating_timer_t *rt) {
 }
 
 // #if defined RASPBERRYPI_PICO_W
-// // Pico W
+// // Pico-W
 // #else
 // // Pico
 // #endif
