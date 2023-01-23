@@ -1,7 +1,7 @@
 [![Build](https://github.com/HouseSimOn/PicoSdkTests/actions/workflows/build_cmake.yml/badge.svg)](https://github.com/HouseSimOn/PicoSdkTests/actions/workflows/build_cmake.yml)
 
-# PicoSdkTests
-Repo used to perform tests with Pi Pico SDK
+# PicoSdkStartTemplate
+Start repository template with Pi Pico and Pi PicoW SDK
 
 # Documentation
 https://raspberrypi.github.io/pico-sdk-doxygen/modules.html
