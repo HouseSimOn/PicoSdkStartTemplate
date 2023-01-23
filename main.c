@@ -6,6 +6,12 @@ bool timerCallback (repeating_timer_t *rt) {
     return true;
 }
 
+// #if defined RASPBERRYPI_PICO_W
+// // Pico W
+// #else
+// // Pico
+// #endif
+
 repeating_timer_t timer;
 
 int main() {
