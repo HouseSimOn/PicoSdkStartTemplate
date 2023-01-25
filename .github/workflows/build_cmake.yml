@@ -20,7 +20,7 @@ jobs:
     - name: Init submodules
       run: |
         git submodule update --init
-        cd pico-sdk
+        cd Sources/Sdk/pico-sdk
         git submodule update --init
 
     - name: Configure CMake
