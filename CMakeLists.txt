@@ -1,26 +1,26 @@
 cmake_minimum_required(VERSION 3.16)
 
-include(Sources/Sdk/pico-sdk/pico_sdk_init.cmake)
+include(Sdk/pico-sdk/pico_sdk_init.cmake)
+
+include(Sdk/SdkConfig.cmake)
 
 project(PicoSdkStartTemplate)
-
-# Pico platform - rp2040 default
-# set(PICO_PLATFORM "rp2040")
-
-# Pico compiler - pico_arm_gcc default
-# set(PICO_COMPILER "pico_arm_gcc")
-
-# Set PICO_BOARD to pico_w. Comment it to leave default pico.
-# set(PICO_BOARD pico_w)
-
-# Set build type - release default
-# set(CMAKE_BUILD_TYPE "Release")
 
 pico_sdk_init()
 
 add_link_options("-Wl,--print-memory-usage")
 
-add_executable(PicoSdkStartTemplate Sources/main.c)
+set(SOURCES)
+set(INCLUDE_DIRS)
+
+# To use Regex
+# file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "Source/*.c")
+
+add_subdirectory("Source")
+
+add_executable(PicoSdkStartTemplate ${SOURCES})
+
+include_directories(${INCLUDE_DIRS})
 
 target_link_libraries(PicoSdkStartTemplate pico_stdlib)
 
