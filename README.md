@@ -3,6 +3,9 @@
 # PicoSdkStartTemplate
 Start repository template with Pi Pico and Pi PicoW SDK
 
+## Template version
+__0.0.1__
+
 # Documentation
 https://raspberrypi.github.io/pico-sdk-doxygen/modules.html
 
