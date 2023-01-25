@@ -1,5 +1,3 @@
-message(->> Source)
-
 add_subdirectory(Led)
 
 list(
