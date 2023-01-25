@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-include(pico-sdk/pico_sdk_init.cmake)
+include(Sources/Sdk/pico-sdk/pico_sdk_init.cmake)
 
 project(PicoSdkStartTemplate)
 
@@ -20,7 +20,7 @@ pico_sdk_init()
 
 add_link_options("-Wl,--print-memory-usage")
 
-add_executable(PicoSdkStartTemplate main.c)
+add_executable(PicoSdkStartTemplate Sources/main.c)
 
 target_link_libraries(PicoSdkStartTemplate pico_stdlib)
 
