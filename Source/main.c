@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "Led.h"
+
 #if defined RASPBERRYPI_PICO_W
 #include "pico/cyw43_arch.h"
 #endif
@@ -9,41 +11,27 @@ bool timerCallback (repeating_timer_t *rt) {
     return true;
 }
 
-#if defined RASPBERRYPI_PICO_W
-// Pico-W
-void static setLedPin(bool State) {
-    cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, State);
-}
-#else
-// Pico
-void static setLedPin(bool State) {
-    gpio_put(25, State);
-}
-#endif
-
 repeating_timer_t timer;
 
 int main() {
     stdio_init_all();
 
+    printf("Starting...\n");
+    Led_Init();
+
 #if defined RASPBERRYPI_PICO_W
     cyw43_arch_init();
-#else
-    gpio_init(25);
-    gpio_set_dir(25, GPIO_OUT);
 #endif
 
     add_repeating_timer_ms(1000, timerCallback, NULL, &timer);
 
     while(true) {
-        printf("Test print\n");
+        printf("While loop print\n");
 
-        // gpio_put(25, 1);
-        setLedPin(true);
+        Led_SetState(true);
         sleep_ms(1000);
 
-        // gpio_put(25, 0);
-        setLedPin(false);
+        Led_SetState(false);
         sleep_ms(1000);
     }
 
