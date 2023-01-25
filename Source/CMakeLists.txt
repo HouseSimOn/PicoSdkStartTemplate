@@ -1,0 +1,16 @@
+message(->> Source)
+
+add_subdirectory(Led)
+
+list(
+    APPEND INCLUDE_DIRS
+    "${CMAKE_CURRENT_SOURCE_DIR}/Led"
+)
+
+list(
+    APPEND SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/main.c"
+)
+
+set(SOURCES "${SOURCES}" PARENT_SCOPE)
+set(INCLUDE_DIRS "${INCLUDE_DIRS}" PARENT_SCOPE)

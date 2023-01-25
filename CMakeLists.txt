@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-include(Sources/Sdk/pico-sdk/pico_sdk_init.cmake)
+include(Sdk/pico-sdk/pico_sdk_init.cmake)
 
 project(PicoSdkStartTemplate)
 
@@ -20,16 +20,28 @@ pico_sdk_init()
 
 add_link_options("-Wl,--print-memory-usage")
 
-add_executable(PicoSdkStartTemplate Sources/main.c)
+set(SOURCES)
+set(INCLUDE_DIRS)
+
+# To use Regex
+# file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "Source/*.c")
+# file(GLOB_RECURSE INCLUDES RELATIVE ${CMAKE_SOURCE_DIR} "Source/*.h")
+
+add_subdirectory("Source")
+
+message(Sources -> ${SOURCES})
+message(Includes -> ${INCLUDES})
+message(IncludeDirs -> ${INCLUDE_DIRS})
+
+add_executable(PicoSdkStartTemplate ${SOURCES} ${INCLUDES})
 
 target_link_libraries(PicoSdkStartTemplate pico_stdlib)
+
+include_directories(${INCLUDE_DIRS})
 
 if(${PICO_BOARD} STREQUAL "pico_w")
     target_link_libraries(PicoSdkStartTemplate pico_cyw43_arch_none)
 endif()
-
-# list(APPEND SOURCES_LIST_REGEX *.c *.h)
-# list(APPEND SOURCES_DIRS ${CMAKE_CURRENT_LIST_DIR}/Sources/)
 
 pico_enable_stdio_usb(PicoSdkStartTemplate 1)
 pico_enable_stdio_uart(PicoSdkStartTemplate 0)

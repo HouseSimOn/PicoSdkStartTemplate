@@ -1,0 +1,10 @@
+message(->> led)
+
+list(
+  APPEND SOURCES
+  "${CMAKE_CURRENT_SOURCE_DIR}/Led.c"
+)
+
+message(${CMAKE_CURRENT_SOURCE_DIR})
+
+set(SOURCES "${SOURCES}" PARENT_SCOPE)
