@@ -6,14 +6,16 @@
 #include "pico/cyw43_arch.h"
 #endif
 
-bool timerCallback (repeating_timer_t *rt) {
+bool timerCallback(repeating_timer_t *rt)
+{
     printf("Timer callback\n");
     return true;
 }
 
 repeating_timer_t timer;
 
-int main() {
+int main()
+{
     stdio_init_all();
 
     printf("Starting...\n");
@@ -25,7 +27,8 @@ int main() {
 
     add_repeating_timer_ms(1000, timerCallback, NULL, &timer);
 
-    while(true) {
+    while (true)
+    {
         printf("While loop print\n");
 
         Led_SetState(true);
