@@ -13,7 +13,7 @@ Platform: Ubuntu
 Based on: https://github.com/raspberrypi/pico-sdk
 
 1. Repository created and cloned `git clone https://github.com/HouseSimOn/PicoSdkStartTemplate.git`.
-2. Added submodule using `git submodule add https://github.com/raspberrypi/pico-sdk.git pico-sdk` command.
+2. Added submodule using `git submodule add https://github.com/raspberrypi/pico-sdk.git Sources/Sdk/pico-sdk` command.
 3. Commit: `git commit -m "Added pico-sdk submodule"`.
 4. Call `git submodule update --init` in the main directory and then go to the pico-sdk and call this command again.
 5. Create settings.json for intellisense work with following content
