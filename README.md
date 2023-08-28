@@ -27,7 +27,7 @@ Based on: https://github.com/raspberrypi/pico-sdk
     } 
     ```
 
-### printf - via USB
+### printf - via USB (Ubuntu minicom)
 1. To CMakeLists.txt add following lines:
     ```
     pico_enable_stdio_usb(PicoSdkStartTemplate 1)
@@ -36,3 +36,25 @@ Based on: https://github.com/raspberrypi/pico-sdk
 2. Find connected device: `ls -l /dev/ttyUSB* /dev/ttyACM*`
 3. Start minicom: `sudo minicom -b 115200 -o -D /dev/ttyACM0` 
 
+### USB Logger - macOS
+
+1. Find Pico device
+    ```
+    ls /dev/tty.usb* 
+    ```
+2. Run `screen` application
+    ```
+    screen /dev/tty.usbmodem1101 115200
+    ```
+
+### `picotool` usage
+
+1. Load .uf2 file to Pico board
+    ```
+    picotool load -v -x WifiManager.uf2 -f    
+    ```
+
+2. Reboot Pico board
+    ```
+    picotool reboot -f  
+    ```
