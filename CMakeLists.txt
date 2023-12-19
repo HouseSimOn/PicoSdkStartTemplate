@@ -20,12 +20,19 @@ add_subdirectory("Source")
 
 add_executable(PicoSdkStartTemplate ${SOURCES})
 
+list(
+    APPEND INCLUDE_DIRS
+    # Do it, because there is lwipopts.h file in the Sdk directory, to configure lwIP stack.
+    "${CMAKE_CURRENT_SOURCE_DIR}/Sdk"
+)
+
 include_directories(${INCLUDE_DIRS})
 
 target_link_libraries(PicoSdkStartTemplate pico_stdlib)
 
 if(${PICO_BOARD} STREQUAL "pico_w")
-    target_link_libraries(PicoSdkStartTemplate pico_cyw43_arch_none)
+    # target_link_libraries(PicoSdkStartTemplate pico_cyw43_arch_none)
+    target_link_libraries(PicoSdkStartTemplate pico_cyw43_arch_lwip_poll)
 endif()
 
 # PicoProbe uses UART

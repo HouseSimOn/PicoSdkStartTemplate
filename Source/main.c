@@ -27,8 +27,14 @@ int main()
 
     add_repeating_timer_ms(1000, timerCallback, NULL, &timer);
 
+    // These lines breaks debug session - reset occurs.
+    cyw43_arch_enable_ap_mode("MyAPTest", "12345678", CYW43_AUTH_WPA2_AES_PSK);
+    // cyw43_arch_enable_sta_mode();
+
     while (true)
     {
+        cyw43_arch_poll();
+
         printf("While loop print\n");
 
         Led_SetState(true);
