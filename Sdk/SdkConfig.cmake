@@ -9,3 +9,4 @@
 
 # Set build type - release default
 # set(CMAKE_BUILD_TYPE "Release")
+# set(CMAKE_BUILD_TYPE "Debug")

@@ -28,8 +28,9 @@ if(${PICO_BOARD} STREQUAL "pico_w")
     target_link_libraries(PicoSdkStartTemplate pico_cyw43_arch_none)
 endif()
 
-pico_enable_stdio_usb(PicoSdkStartTemplate 1)
-pico_enable_stdio_uart(PicoSdkStartTemplate 0)
+# PicoProbe uses UART
+pico_enable_stdio_usb(PicoSdkStartTemplate 0)
+pico_enable_stdio_uart(PicoSdkStartTemplate 1)
 
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(PicoSdkStartTemplate)
