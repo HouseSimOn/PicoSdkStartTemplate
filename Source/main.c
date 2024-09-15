@@ -17,6 +17,7 @@ repeating_timer_t timer;
 int main()
 {
     stdio_init_all();
+    timer_hw->dbgpause = 0;
 
     printf("Starting...\n");
     Led_Init();
@@ -37,10 +38,10 @@ int main()
 
         printf("While loop print\n");
 
-        Led_SetState(true);
+        // Led_SetState(true);
         sleep_ms(1000);
 
-        Led_SetState(false);
+        // Led_SetState(false);
         sleep_ms(1000);
     }
 
