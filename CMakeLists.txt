@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
-include(Sdk/pico-sdk/pico_sdk_init.cmake)
-
 include(Sdk/SdkConfig.cmake)
+
+include(Sdk/pico-sdk/pico_sdk_init.cmake)
 
 project(PicoSdkStartTemplate)
 
