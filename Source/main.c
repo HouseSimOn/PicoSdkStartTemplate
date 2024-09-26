@@ -17,6 +17,7 @@ repeating_timer_t timer;
 int main()
 {
     stdio_init_all();
+    timer_hw->dbgpause = 0; // Fix for debug
 
     printf("Starting...\n");
     Led_Init();
